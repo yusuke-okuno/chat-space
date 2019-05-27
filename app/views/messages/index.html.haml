@@ -1,0 +1,39 @@
+-# %h1 Messages#index
+-# %p Find me in app/views/messages/index.html.haml
+
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+
+      %ul.left-header__menbers
+        Member:
+        %li.member
+          メンバー名        
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2019/05/20
+        .lower-message
+          .lower-message__content
+            メッセージ
+
+    .form
+      %form
+        %inout.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit
+
