@@ -18,8 +18,11 @@ $(function() {
     return html;
   }
 
-  $('#user-search-field').on("keyup", function() {
+  $('#user-search-field').on("input", function() {
     var input = $('#user-search-field').val();
+    $("#user-search-result").empty();
+
+
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -36,6 +39,7 @@ $(function() {
     .fail(function(){
       alert('ユーザー検索に失敗しました');
     })
+
   });
 
     $(document).on('click', ".user-search-add",function() { 
