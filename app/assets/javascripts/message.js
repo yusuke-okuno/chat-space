@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message)
     var content = message.content ? `${ message.content }` : "";
     var image = message.image ? `<img src= ${ message.image }>` : "";
     var html = `<div class = "message" data-id = ${message.id}>
@@ -51,7 +50,6 @@ $(function(){
 
   var reloadMessages = function(){
     var last_message_id = $('.message:last').data("id");
-    // console.log(last_message_id);
     $.ajax({
       url: 'api/messages',
       type: 'get',
@@ -60,9 +58,7 @@ $(function(){
     })
 
     .done(function(messages) {
-      // console.log(messages)
       messages.forEach(function(message){
-        // console.log(messages)
        var insertHTML = '';
        insertHTML += buildHTML(message);
        $('.messages').append(insertHTML);
