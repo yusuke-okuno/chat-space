@@ -44,7 +44,9 @@ $(function() {
 
     $(document).on('click', ".user-search-add",function() { 
       var userName = $(this).data('user-name');
+    　console.log(userName)
       var userId = $(this).data('user-id');
+      console.log(userId)
       var html = addHTML(userName,userId)
       $("#user-add-result").append(html);
       $("#user-search-result").remove();
