@@ -48,7 +48,7 @@ $(function() {
       var userId = $(this).data('user-id');
       var html = addHTML(userName,userId)
       $("#user-add-result").append(html);
-      $("#user-search-result").remove();
+      $(this).parent().remove();
     })
 
     $(document).on('click', "#user-add-result",function() { 
