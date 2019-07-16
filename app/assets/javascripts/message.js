@@ -58,6 +58,7 @@ $(function(){
     })
 
     .done(function(messages) {
+      console.log(messages)
       messages.forEach(function(message){
        var insertHTML = '';
        insertHTML += buildHTML(message);
@@ -72,6 +73,6 @@ $(function(){
     });
   };
   $(function(){
-  setInterval(reloadMessages, 50000);
+  setInterval(reloadMessages, 10000);
   })
 })

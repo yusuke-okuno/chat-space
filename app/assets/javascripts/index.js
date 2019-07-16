@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(function() {
   function buildHTML(user){
     var html = `<div class = "chat-group-user clearfix">
@@ -44,9 +45,7 @@ $(function() {
 
     $(document).on('click', ".user-search-add",function() { 
       var userName = $(this).data('user-name');
-    　console.log(userName)
       var userId = $(this).data('user-id');
-      console.log(userId)
       var html = addHTML(userName,userId)
       $("#user-add-result").append(html);
       $("#user-search-result").remove();
@@ -55,4 +54,5 @@ $(function() {
     $(document).on('click', "#user-add-result",function() { 
       $("#user-add-result").remove();
   });
+});
 });
