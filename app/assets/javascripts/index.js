@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-$(function() {
+// $(function() {
   function buildHTML(user){
     var html = `<div class = "chat-group-user clearfix">
                   <p class = "chat-group-user__name">${user.name}</p>
@@ -43,16 +43,18 @@ $(function() {
 
   });
 
-    $(document).on('click', ".user-search-add",function() { 
+    $("#user-search-result").on('click', ".user-search-add",function() { 
       var userName = $(this).data('user-name');
       var userId = $(this).data('user-id');
       var html = addHTML(userName,userId)
       $("#user-add-result").append(html);
+      console.log(userName)
+      console.log(userId)
       $(this).parent().remove();
     })
 
-    $(document).on('click', "#user-add-result",function() { 
-      $("#user-add-result").remove();
+    $("#user-add-result").on('click', ".user-search-remove",function() { 
+      $(this).parent().remove();
   });
-});
+// });
 });
