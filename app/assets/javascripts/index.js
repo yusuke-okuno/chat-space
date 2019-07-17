@@ -21,6 +21,10 @@ $(document).on('turbolinks:load', function(){
 
   $('#user-search-field').on("input", function() {
     var input = $('#user-search-field').val();
+    if (input == ""){
+      $("#user-search-result").empty();
+      return false
+    }
     $("#user-search-result").empty();
 
 
@@ -47,14 +51,12 @@ $(document).on('turbolinks:load', function(){
       var userName = $(this).data('user-name');
       var userId = $(this).data('user-id');
       var html = addHTML(userName,userId)
-      $("#user-add-result").append(html);
-      console.log(userName)
-      console.log(userId)
+      $("#chat-group-users").append(html);
       $(this).parent().remove();
     })
 
-    $("#user-add-result").on('click', ".user-search-remove",function() { 
+    $("#chat-group-users").on('click', ".user-search-remove",function() { 
       $(this).parent().remove();
   });
-// });
+
 });
